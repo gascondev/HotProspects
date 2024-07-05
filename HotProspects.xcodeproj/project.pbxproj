@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		553301A82C386E2400A83630 /* ProspectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553301A72C386E2400A83630 /* ProspectsView.swift */; };
 		553301AA2C386E3200A83630 /* MeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553301A92C386E3200A83630 /* MeView.swift */; };
+		553301AC2C38759D00A83630 /* Prospect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553301AB2C38759D00A83630 /* Prospect.swift */; };
 		55393C642C38168B00DECB6A /* SamplePackage in Frameworks */ = {isa = PBXBuildFile; productRef = 55393C632C38168B00DECB6A /* SamplePackage */; };
 		556F9A1A2C33C1C300180912 /* HotProspectsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F9A192C33C1C300180912 /* HotProspectsApp.swift */; };
 		556F9A1C2C33C1C300180912 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556F9A1B2C33C1C300180912 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		553301A72C386E2400A83630 /* ProspectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProspectsView.swift; sourceTree = "<group>"; };
 		553301A92C386E3200A83630 /* MeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeView.swift; sourceTree = "<group>"; };
+		553301AB2C38759D00A83630 /* Prospect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prospect.swift; sourceTree = "<group>"; };
 		556F9A162C33C1C300180912 /* HotProspects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotProspects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556F9A192C33C1C300180912 /* HotProspectsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProspectsApp.swift; sourceTree = "<group>"; };
 		556F9A1B2C33C1C300180912 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				556F9A192C33C1C300180912 /* HotProspectsApp.swift */,
 				556F9A1B2C33C1C300180912 /* ContentView.swift */,
+				553301AB2C38759D00A83630 /* Prospect.swift */,
 				553301A72C386E2400A83630 /* ProspectsView.swift */,
 				553301A92C386E3200A83630 /* MeView.swift */,
 				556F9A1D2C33C1C500180912 /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				553301AA2C386E3200A83630 /* MeView.swift in Sources */,
+				553301AC2C38759D00A83630 /* Prospect.swift in Sources */,
 				553301A82C386E2400A83630 /* ProspectsView.swift in Sources */,
 				556F9A1C2C33C1C300180912 /* ContentView.swift in Sources */,
 				556F9A1A2C33C1C300180912 /* HotProspectsApp.swift in Sources */,
