@@ -43,12 +43,21 @@ struct ProspectsView: View {
     
     
     var body: some View {
-        List(prospects) { prospect in
-            VStack(alignment: .leading) {
-                Text(prospect.name)
-                    .font(.headline)
-                Text(prospect.emailAddress)
-                    .foregroundStyle(.secondary)
+        NavigationStack {
+            List(prospects) { prospect in
+                VStack(alignment: .leading) {
+                    Text(prospect.name)
+                        .font(.headline)
+                    Text(prospect.emailAddress)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            .navigationTitle(title)
+            .toolbar {
+                Button("Scan", systemImage: "qrcode.viewfinder") {
+                    let prospect =  Prospect(name: "Álvaro Gascón", emailAddress: "alvaro@gascon.com", isContacted: false)
+                    modelContext.insert(prospect)
+                }
             }
         }
     }
