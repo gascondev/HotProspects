@@ -5,12 +5,15 @@
 //  Created by Álvaro Gascón on 5/7/24.
 //
 
+import CodeScanner
 import SwiftData
 import SwiftUI
 
 struct ProspectsView: View {
     @Query(sort: \Prospect.name) var prospects: [Prospect]
     @Environment(\.modelContext) var modelContext
+    
+    @State private var isShowingScanner = false
     
     enum FilterType {
         case none, contacted, uncontacted
@@ -55,10 +58,27 @@ struct ProspectsView: View {
             .navigationTitle(title)
             .toolbar {
                 Button("Scan", systemImage: "qrcode.viewfinder") {
-                    let prospect =  Prospect(name: "Álvaro Gascón", emailAddress: "alvaro@gascon.com", isContacted: false)
-                    modelContext.insert(prospect)
+                    isShowingScanner = true
                 }
             }
+            .sheet(isPresented: $isShowingScanner) {
+                CodeScannerView(codeTypes: [.qr], simulatedData: "Paul Hudson\npaul@hackingwithswift.com", completion: handleScan)
+            }
+        }
+    }
+    
+    func handleScan(result: Result<ScanResult, ScanError>) {
+       isShowingScanner = false
+        switch result {
+        case .success(let result):
+            let details = result.string.components(separatedBy: "\n")
+            guard details.count == 2 else { return }
+
+            let person = Prospect(name: details[0], emailAddress: details[1], isContacted: false)
+
+            modelContext.insert(person)
+        case .failure(let error):
+            print("Scanning failed: \(error.localizedDescription)")
         }
     }
 }
